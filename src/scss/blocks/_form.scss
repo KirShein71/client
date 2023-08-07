@@ -1,0 +1,77 @@
+.form {
+    form {
+    position: fixed;
+    width: 277px;
+    height: 370px;
+    border: 3px solid #ffff;
+    padding: 75px 15px 15px 25px;
+    margin: 0 auto;
+    top: 25%;
+    left: 40%;
+    @media (max-width: 1024px) {
+        height: 240px;
+    }
+    @media (max-width: 991px) {
+        height: 220px;
+        left: 33%;
+    }
+    @media (max-width: 575px) {
+        width: 240px;
+        height: 190px;
+        left: 24%;
+    }
+    @media (max-width: 480px) {
+        width: 200px;
+        height: 160px;
+        padding-top: 30px;
+    }
+    @media (max-width: 450px) {
+        height: 130px;
+    }
+    @media (max-width: 320px) {
+        left: 13%;
+    }
+    
+}
+
+
+
+input {
+    width: 197px;
+    height: 22px;
+    padding: 1px 2px;
+    margin: 1.041vw 0px;
+    border: none;
+    border-bottom: 1px solid #ffff;
+    background: transparent;
+    outline: 0 !important;
+    color:  #ffff;
+    font-size: 16px;
+}
+
+.input__button {
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: #da224d;
+    border-radius: 100px;
+    text-transform: uppercase;
+    color: #ffff;
+    font-size: 15px;
+    font-weight: 500;
+    @media (max-width: 575px) {
+        width: 130px;
+        height: 40px;
+    }
+    @media (max-width: 480px) {
+        width: 100px;
+        height: 30px;
+        font-size: 11px;
+    }
+}
+::-webkit-input-placeholder { color: #ffff; }
+}

@@ -1,0 +1,266 @@
+.promocard {
+    width: 310px;
+    height: 510px;
+    padding: 30px;
+    
+    &:hover {
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    }
+   
+    
+
+    &__img {
+        width: 234px;
+        height: 289px;
+        img {
+            display: block;
+            margin: 0 auto;
+            cursor: pointer;
+            width: initial;
+            height: 100%;
+        }
+    }
+
+    &__title {
+        font-size: 20px;
+        font-weight: 600;
+        color: rgb(7, 7, 7);
+        padding-top: 50px;
+    }
+
+    &__price {
+        font-size: 22px;
+        font-weight: 700;
+        color: rgb(7, 7, 7);
+        text-align: right;
+        padding-top: 15px;
+        padding-bottom: 25px;
+    }
+
+}
+
+@media screen and (max-width: 1366px) {
+    .promocard {
+        width: 310px;
+        height: 510px;
+        padding: 30px;
+        &:hover {
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        }
+
+        &__img {
+            width: 234px;
+            height: 289px;
+            img {
+                display: block;
+                margin: 0 auto;
+                cursor: pointer;
+                width: initial;
+                height: 100%;
+            }
+        }
+
+        &__title {
+            font-size: 20px;
+            font-weight: 600;
+            color: rgb(7, 7, 7);
+            padding-top: 50px;
+        }
+
+        &__price {
+            font-size: 22px;
+            font-weight: 700;
+            color: rgb(7, 7, 7);
+            text-align: right;
+            padding-top: 15px;
+            padding-bottom: 25px;
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .promocard {
+        width: 310px;
+        height: 510px;
+        padding: 30px;
+        &:hover {
+            box-shadow: none;
+        }
+
+        &__img {
+            width: 234px;
+            height: 289px;
+            img {
+                display: block;
+                margin: 0 auto;
+                cursor: pointer;
+                width: initial;
+                height: 100%;
+            }
+        }
+
+        &__title {
+            font-size: 20px;
+            font-weight: 600;
+            color: rgb(7, 7, 7);
+            padding-top: 50px;
+        }
+
+        &__price {
+            font-size: 22px;
+            font-weight: 700;
+            color: rgb(7, 7, 7);
+            text-align: right;
+            padding-top: 15px;
+            padding-bottom: 25px;
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .promocard {
+        width: 290px;
+        height: 460px;
+        padding: 30px;
+     
+        &:hover {
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        }
+
+        &__img {
+            width: 180px;
+            height: 289px;
+            img {
+                height: 90%;
+            }
+        }
+
+        &__title {
+            font-size: 18px;
+            font-weight: 600;
+            color: rgb(7, 7, 7);
+            padding-top: 50px;
+        }
+
+        &__price {
+            font-size: 20px;
+            font-weight: 700;
+            color: rgb(7, 7, 7);
+            text-align: right;
+            padding-top: 15px;
+            padding-bottom: 25px;
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .promocard {
+        width: 465px;
+        height: 510px;
+        padding: 30px;
+        &:hover {
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        }
+
+        &__img {
+            width: 350px;
+            height: 289px;
+            img {
+                display: block;
+                margin: 0 auto;
+                cursor: pointer;
+                width: initial;
+                height: 100%;
+            }
+        }
+
+        &__title {
+            font-size: 20px;
+            font-weight: 600;
+            color: rgb(7, 7, 7);
+            padding-top: 50px;
+        }
+
+        &__price {
+            font-size: 22px;
+            font-weight: 700;
+            color: rgb(7, 7, 7);
+            text-align: right;
+            padding-top: 15px;
+            padding-bottom: 25px;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .promocard {
+        width: 307px;
+        height: 400px;
+        
+     
+        
+
+        &__img {
+            width: 230px;
+            height: 220px;
+            img {
+                height: 100%;
+        }
+    }
+
+        &__title {
+            font-size: 18px;
+            padding-top: 15px;
+        }
+
+        &__price {
+            font-size: 19px;
+            padding-top: 11px;
+           
+        }
+    
+}
+}
+
+@media screen and (max-width: 575px) {
+   .promocard {
+    width: 250px;
+    height: 350px;
+
+    &__img {
+            width: 200px;
+            height: 190px;
+        img {
+        
+            height: 95%;
+        }
+    }
+    &__title {
+        font-size: 15px;
+        padding-top: 15px;
+    }
+
+    &__price {
+        font-size: 17px;
+        padding-top: 11px;
+       
+    }
+
+   }
+}
+
+@media screen and (max-width: 480px) {
+   .promocard {
+    width: 200px;
+    
+   
+   &__title {
+    font-size: 14px;
+    padding-top: 5px;
+   }
+   &__price {
+    font-size: 16px;
+    padding-top: 7px;
+   }
+}
+}

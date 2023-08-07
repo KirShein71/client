@@ -1,0 +1,20 @@
+.admin {
+    &__content {
+        margin-top: 50px;
+        margin-bottom: 50px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 25px;
+    }
+    &__button {
+        width: 331px;
+        height: 64px;
+        background: #C4C4C4;
+        font-weight: 400;
+        font-size: 24px;
+        color: #000000;
+        text-align: center;
+    }
+}

@@ -1,0 +1,73 @@
+.wineries {
+    display: flex;
+    margin-top: 30px;
+    margin-right: 150px;
+    position: relative;
+    @media (max-width: 991px) {
+        display: none;
+       }
+    &__title {
+        font-size: 25px;
+        color: #050505;
+        font-weight: bold;
+        margin-right: 15px;
+        cursor: pointer;
+        
+    }
+
+    &__selected {
+        font-size: 25px;
+        color: #f80000;
+        font-weight: bold;
+        
+    }
+
+    &__popup {
+    position: absolute;
+    left: 0;
+    margin-top: 40px;
+    background: #ffffff;
+    border: 1px solid rgba(48, 48, 48, 0.09);
+    box-shadow: 0px 5px 15px rgba(48, 48, 48, 0.09);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 10px 0;
+    width: 450px;
+    height: 400px;
+    
+    }
+    ul {
+        overflow: hidden;
+        li {
+       
+            font-size: 25px;
+           
+             color: #050505;
+             list-style: none;
+             font-weight: bold;
+             list-style: none;
+             cursor: pointer;
+             transition: background-color 0.1s ease-in-out;
+             width: 175px;
+             
+       
+             &:hover {
+               
+               color: rgb(255, 13, 13);
+             }
+       
+             &:active {
+               background-color: darken(#f9f9f9, 5%);
+             }
+       
+             &.active {
+                 
+                 color: red;
+               }
+           }
+    }
+
+    .some-class-or-rule .tooltip {
+        width: 100%;
+    }
+}

@@ -1,0 +1,33 @@
+.catalog {
+    margin-top: 50px;
+    &__content {
+        display: flex;
+        margin-top: 50px;
+    }
+
+    &__top {
+        display: flex;
+        
+    }
+
+    &__reset {
+            margin-top: 37px;
+            font-size: 18px;
+            color: #3b3a3a;
+            font-weight: bold;
+            cursor: pointer;
+            @media (max-width: 480px) {
+                margin-top: 33px;
+            }
+    }
+
+    
+
+    .catalog-sort__title {
+        font-size: 23px;
+        font-weight: 600;
+        color: #050505;
+    }
+
+
+}
