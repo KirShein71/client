@@ -18,7 +18,7 @@ const ProductList = observer(() => {
     debounce((value) => {
       setSearchQuery(value);
     }, 250),
-    [debounce, setSearchQuery],
+    [],
   );
 
   const handleSearchInputChange = async (event) => {
