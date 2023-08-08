@@ -13,7 +13,7 @@ const Signup = observer(() => {
   useEffect(() => {
     if (user.isAdmin) navigate('/admin', { replace: true });
     if (user.isAuth) navigate('/admin', { replace: true });
-  }, []);
+  }, [navigate, user.isAdmin, user.isAuth]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();

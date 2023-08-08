@@ -17,7 +17,7 @@ const SliderShow = observer(() => {
         )),
       );
     });
-  }, []);
+  }, [banner]);
 
   React.useEffect(() => {
     const interval = setInterval(() => {

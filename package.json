@@ -19,20 +19,17 @@
     "mobx-react-lite": "^3.4.3",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.4",
-    "react-burger-menu": "^3.0.9",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.11.1",
     "react-scripts": "5.0.1",
     "react-slick": "^0.29.0",
     "react-tooltip": "^5.18.0",
     "react-uuid": "^2.0.0",
-    "react-whatsapp-widget": "^2.2.0",
     "sass": "^1.62.1",
-    "slick-carousel": "^1.8.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "$(npm bin)/react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

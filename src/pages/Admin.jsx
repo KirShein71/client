@@ -6,13 +6,13 @@ import { logout } from '../http/userApi';
 
 const Admin = () => {
   const { user } = React.useContext(AppContext);
-  //   const navigate = React.useNavigate();
+  const navigate = useNavigate();
 
-  //   const handleLogout = (event) => {
-  //     logout();
-  //     user.logout();
-  //     navigate('/login', { replace: true });
-  //   };
+  const handleLogout = (event) => {
+    logout();
+    user.logout();
+    navigate('/login', { replace: true });
+  };
 
   return (
     <Container>
@@ -41,7 +41,7 @@ const Admin = () => {
           <Link to="/admin/banner">Баннер</Link>
         </li>
       </ul>
-      {/* <Button onClick={handleLogout}>Выйти</Button> */}
+      <Button onClick={handleLogout}>Выйти</Button>
     </Container>
   );
 };

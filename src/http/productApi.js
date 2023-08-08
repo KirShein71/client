@@ -223,7 +223,7 @@ export const createBanner = async (banner) => {
 
 export const updateBanner = async (id, banner) => {
     const { data } = await authInstance.put(`banner/update/${id}`, banner)
-    return banner
+    return data
 }
 export const deleteBanner = async (id) => {
     const { data } = await authInstance.delete(`banner/delete/${id}`)

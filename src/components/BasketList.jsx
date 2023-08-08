@@ -38,7 +38,7 @@ const BasketList = () => {
       .then((data) => (basket.products = data.products))
 
       .finally(() => setFetching(false));
-  }, []);
+  }, [basket]);
 
   if (fetching) {
     return <Loading />;

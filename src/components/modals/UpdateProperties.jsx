@@ -1,6 +1,5 @@
 import React from 'react';
 import { Row, Col, Button, Form } from 'react-bootstrap';
-import { createProperty, updateProperty, deleteProperty } from '../../http/productApi';
 import uuid from 'react-uuid';
 
 const UpdateProperties = (props) => {

@@ -1,11 +1,8 @@
 import React from 'react';
-import { fetchAllProducts, fetchCategories, deleteProduct } from '../http/productApi';
+import { fetchAllProducts, deleteProduct } from '../http/productApi';
 import { Button, Container, Spinner, Table, Pagination } from 'react-bootstrap';
 import CreateProduct from '../components/modals/CreateProduct';
 import UpdateProduct from '../components/modals/UpdateProduct';
-
-// количество товаров на страницу
-const ADMIN_PER_PAGE = 27;
 
 const AdminProducts = () => {
   const [products, setProducts] = React.useState([]); // список загруженных товаров
@@ -20,7 +17,7 @@ const AdminProducts = () => {
   // текущая страница списка товаров
   const [currentPage, setCurrentPage] = React.useState(1);
   // сколько всего страниц списка товаров
-  const [totalPages, setTotalPages] = React.useState(1);
+  const [totalPages] = React.useState(1);
 
   // обработчик клика по номеру страницы
   const handlePageClick = (page) => {
@@ -109,7 +106,10 @@ const AdminProducts = () => {
                   <td>{item.name}</td>
                   <td>
                     {item.image && (
-                      <a href={process.env.REACT_APP_IMG_URL + item.image} target="_blank">
+                      <a
+                        href={process.env.REACT_APP_IMG_URL + item.image}
+                        target="_blank"
+                        rel="noreferrer">
                         фото
                       </a>
                     )}

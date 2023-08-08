@@ -13,7 +13,7 @@ const AdminBanner = () => {
   // для обновления списка после добавления, редактирования, удаления — изменяем состояние
   const [change, setChange] = React.useState(true);
   // id товара, который будем редактировать — для передачи в <UpdateProduct id={…} />
-  const [banner, setBanner] = React.useState('');
+  const [setBanner] = React.useState('');
 
   const handleUpdateClick = (id) => {
     setBanner(id);
@@ -58,7 +58,10 @@ const AdminBanner = () => {
               <tr key={item.id}>
                 <td>
                   {item.image && (
-                    <a href={process.env.REACT_APP_IMG_URL + item.image} target="_blank">
+                    <a
+                      href={process.env.REACT_APP_IMG_URL + item.image}
+                      target="_blank"
+                      rel="noreferrer">
                       фото
                     </a>
                   )}

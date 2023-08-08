@@ -1,11 +1,9 @@
 import React from 'react';
-import { AppContext } from './AppContext';
 import { useNavigate } from 'react-router-dom';
 import { observer } from 'mobx-react-lite';
 
-const ProductItem = observer(({ data, id }) => {
+const ProductItem = observer(({ data }) => {
   const navigate = useNavigate();
-  const { basket } = React.useContext(AppContext);
 
   const addToProperty = () => {
     navigate(`/productproperty/${data.id}`);

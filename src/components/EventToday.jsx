@@ -18,7 +18,7 @@ const EventToday = observer(() => {
 
   React.useEffect(() => {
     fetchAllEvents().then((data) => (event.events = data));
-  }, []);
+  }, [event]);
 
   return (
     <div className="event__today">

@@ -1,5 +1,5 @@
 import React from 'react';
-import { fetchOneProduct, fetchProdRating } from '../http/productApi';
+import { fetchOneProduct } from '../http/productApi';
 import { useParams } from 'react-router-dom';
 import { append } from '../http/basketApi';
 import { AppContext } from '../components/AppContext';

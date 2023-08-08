@@ -19,14 +19,14 @@ function Event() {
         <div className="event__content">
           <EventToday />
           <div className="event-all">
-            <h2 className="event-all__title">Что у нас есть еще</h2>
+            <h2 className="event-all__title">Что у нас можно заказать</h2>
             <div className="event-all__content">
               {events.map((event, index) => (
                 <React.Fragment key={index}>
                   <div className="event-all__card" onClick={() => onEventModal(index)}>
                     <div className="event-all__card-content">
                       <div className="event-all__card-img">
-                        <img src={event.img} alt="picture" />
+                        <img src={event.img} alt="event" />
                       </div>
                       <div className="event-all__card-title">{event.title}</div>
                     </div>

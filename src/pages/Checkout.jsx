@@ -16,6 +16,8 @@ const isValid = (input) => {
     case 'phone':
       pattern = /[0-9]{1}[0-9]{3}[0-9]{3}[0-9]{4}$/i;
       return pattern.test(input.value.trim());
+    default:
+      return false;
   }
 };
 
@@ -40,7 +42,7 @@ const Checkout = () => {
         }
       })
       .catch((error) => user.logout());
-  }, []);
+  }, [basket, user]);
 
   if (fetching) {
     // loader, пока получаем корзину

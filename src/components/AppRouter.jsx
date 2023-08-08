@@ -64,10 +64,10 @@ const AppRouter = observer(() => {
       {publicRoutes.map(({ path, Component }) => (
         <Route key={path} path={path} element={<Component />} />
       ))}
-      {/* {user.isAuth &&
+      {user.isAuth &&
         authRoutes.map(({ path, Component }) => (
           <Route key={path} path={path} element={<Component />} />
-        ))} */}
+        ))}
       {user.isAdmin &&
         adminRoutes.map(({ path, Component }) => (
           <Route key={path} path={path} element={<Component />} />

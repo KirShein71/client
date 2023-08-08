@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import React from 'react';
 import { adminGetAll as getAllOrders } from '../http/orderApi';
 import { Button, Container, Spinner } from 'react-bootstrap';

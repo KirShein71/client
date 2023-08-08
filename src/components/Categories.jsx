@@ -1,7 +1,7 @@
 import { observer } from 'mobx-react';
 import React from 'react';
 import { AppContext } from './AppContext';
-import { useNavigate, createSearchParams, Link } from 'react-router-dom';
+import { useNavigate, createSearchParams } from 'react-router-dom';
 
 const Categories = observer(() => {
   const { product } = React.useContext(AppContext);

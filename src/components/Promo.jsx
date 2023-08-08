@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { AppContext } from './AppContext';
 import { observer } from 'mobx-react';
 import { fetchBrands, fetchPromoProducts } from '.././http/productApi';
-import { useLocation, useSearchParams, useNavigate, createSearchParam } from 'react-router-dom';
+import { useLocation, useSearchParams, useNavigate } from 'react-router-dom';
 
 const getSearchParams = (searchParams) => {
   let brand = searchParams.get('brand');
@@ -18,8 +18,6 @@ const getSearchParams = (searchParams) => {
 
 const Promo = observer(() => {
   const { product } = React.useContext(AppContext);
-  const navigate = useNavigate();
-
   const [brandsFetching, setBrandsFetching] = React.useState(true);
   const [productFetching, setProductFetching] = React.useState(true);
 
