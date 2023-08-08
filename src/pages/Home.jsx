@@ -34,11 +34,6 @@ function Home() {
       )}
       <Information />
       <Vinotheque />
-      {agePopUp && (
-        <div className="overlay">
-          <AgeConfirm onClosedAgePopup={onClosedAgePopup} />
-        </div>
-      )}
     </>
   );
 }
