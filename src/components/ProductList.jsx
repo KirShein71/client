@@ -15,9 +15,10 @@ const ProductList = observer(() => {
   const [filteredProducts, setFilteredProducts] = React.useState(allProducts);
 
   const updateSearchValue = React.useMemo(
-    debounce((value) => {
-      setSearchQuery(value);
-    }, 250),
+    () =>
+      debounce((value) => {
+        setSearchQuery(value);
+      }, 250),
     [],
   );
 
