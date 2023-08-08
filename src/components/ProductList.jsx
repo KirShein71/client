@@ -14,7 +14,7 @@ const ProductList = observer(() => {
   const [allProducts, setAllProducts] = React.useState(product.products);
   const [filteredProducts, setFilteredProducts] = React.useState(allProducts);
 
-  const updateSearchValue = React.useCallback(
+  const updateSearchValue = React.useMemo(
     debounce((value) => {
       setSearchQuery(value);
     }, 250),
