@@ -4,10 +4,8 @@ import Event from '../components/Event';
 import Promo from '../components/Promo';
 import Information from '../components/Infirmation';
 import Vinotheque from '../components/Vinotheque';
-import AgeConfirm from '../components/AgeConfirm';
 
-function Home({ onClosedAgePopup }) {
-  const [agePopUp, setAgePopUp] = React.useState(false);
+function Home() {
   const [isMobile, setIsMobile] = React.useState(false);
 
   const handleResize = () => {
@@ -20,19 +18,6 @@ function Home({ onClosedAgePopup }) {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  React.useEffect(() => {
-    let pop_status = localStorage.getItem('pop_status');
-    setTimeout(() => {
-      if (!pop_status) {
-        setAgePopUp(false);
-        localStorage.setItem('pop_status', 1);
-      }
-    }, 1000);
-  }, []);
-
-  onClosedAgePopup = () => {
-    setAgePopUp(false);
-  };
   return (
     <>
       <Banner />
