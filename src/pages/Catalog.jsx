@@ -29,7 +29,7 @@ const getSearchParams = (searchParams) => {
   return { category, winery, year, page };
 };
 
-const Catalog = observer(({ name }) => {
+const Catalog = observer(() => {
   const { product } = React.useContext(AppContext);
 
   const [categoriesFetching, setCategoriesFetching] = React.useState(true);

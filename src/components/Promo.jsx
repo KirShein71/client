@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { AppContext } from './AppContext';
 import { observer } from 'mobx-react';
 import { fetchBrands, fetchPromoProducts } from '.././http/productApi';
-import { useLocation, useSearchParams, useNavigate } from 'react-router-dom';
+import { useLocation, useSearchParams } from 'react-router-dom';
 
 const getSearchParams = (searchParams) => {
   let brand = searchParams.get('brand');
@@ -54,8 +54,6 @@ const Promo = observer(() => {
     // eslint-disable-next-line
   }, [location.search]);
 
-  //   при клике на категорию, бренд, номер страницы или при нажатии кнопки  «Назад»
-  //   браузера — получам с сервера список товаров, потому что это уже другой список
   React.useEffect(() => {
     setProductFetching(true);
     fetchPromoProducts(product.brand)
@@ -65,8 +63,7 @@ const Promo = observer(() => {
         product.count = filteredProducts.length;
       })
       .finally(() => setProductFetching(false));
-    // eslint - disable - next - line;
-  }, [product.brand]);
+  }, [product.brand, product]);
   return (
     <div className="promo">
       <div className="container">

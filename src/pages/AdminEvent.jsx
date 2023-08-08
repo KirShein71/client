@@ -1,9 +1,7 @@
 import React from 'react';
 import { fetchAllEvents, deleteEvent } from '../http/productApi';
-import { Button, Container, Spinner, Table, Pagination } from 'react-bootstrap';
+import { Button, Container, Spinner, Table } from 'react-bootstrap';
 import CreateEvent from '../components/modals/CreateEvent';
-
-// количество товаров на страницу
 
 const AdminEvent = () => {
   const [events, setEvents] = React.useState([]); // список загруженных товаров
@@ -13,7 +11,7 @@ const AdminEvent = () => {
   // для обновления списка после добавления, редактирования, удаления — изменяем состояние
   const [change, setChange] = React.useState(true);
   // id товара, который будем редактировать — для передачи в <UpdateProduct id={…} />
-  const [event, setEvent] = React.useState('');
+  const [setEvent] = React.useState('');
 
   const handleUpdateClick = (id) => {
     setEvent(id);
@@ -61,7 +59,10 @@ const AdminEvent = () => {
                 <td>{item.name}</td>
                 <td>
                   {item.image && (
-                    <a href={process.env.REACT_APP_IMG_URL + item.image} target="_blank">
+                    <a
+                      href={process.env.REACT_APP_IMG_URL + item.image}
+                      target="_blank"
+                      rel="noreferrer">
                       фото
                     </a>
                   )}
