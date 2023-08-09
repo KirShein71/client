@@ -2,6 +2,8 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
+  "allowedHosts": "all",
+    "proxy": "http://localhost:3001",
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
     "@pbe/react-yandex-maps": "^1.2.4",
@@ -21,7 +23,7 @@
     "react-bootstrap": "^2.7.4",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.11.1",
-    "react-scripts":  "4.0.3",
+    "react-scripts":  "5.0.1",
     "react-slick": "^0.29.0",
     "react-tooltip": "^5.18.0",
     "react-uuid": "^2.0.0",
