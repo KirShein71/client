@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "allowedHosts": "all",
-    "proxy": "http://localhost:3001",
+  "proxy": "https://5000",
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
     "@pbe/react-yandex-maps": "^1.2.4",
