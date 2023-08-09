@@ -27,7 +27,7 @@ const Header = observer(() => {
         </div>
         <div className="header__content">
           <Link to="/">
-            <div className="header__item">Плавная</div>
+            <div className="header__item">Главная</div>
           </Link>
           <Link to="/catalog">
             <div className="header__item">Каталог</div>
