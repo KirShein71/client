@@ -10,6 +10,7 @@ const ProductProperty = ({ data }) => {
   const { basket } = React.useContext(AppContext);
   const [product, setProduct] = React.useState();
   const [isAdded, setIsAdded] = React.useState(true);
+  const [rating, setRating] = React.useState(null);
 
   React.useEffect(() => {
     fetchOneProduct(id).then((data) => setProduct(data));

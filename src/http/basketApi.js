@@ -6,8 +6,8 @@ export const fetchBasket = async () => {
     return data
 }
 
-export const append = async (productId) => {
-    const { data } = await guestInstance.put(`basket/product/${productId}/append/1`)
+export const append = async (productIdid) => {
+    const { data } = await guestInstance.put(`basket/product/${productIdid}/append/1`)
     return data
     
 }
