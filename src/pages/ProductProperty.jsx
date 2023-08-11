@@ -1,16 +1,17 @@
 import React from 'react';
 import { fetchOneProduct } from '../http/productApi';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { append } from '../http/basketApi';
 import { AppContext } from '../components/AppContext';
 import Loading from '../components/Loading';
 
-const ProductProperty = ({ data }) => {
+const ProductProperty = () => {
   const { id } = useParams();
   const { basket } = React.useContext(AppContext);
   const [product, setProduct] = React.useState();
-  const [isAdded, setIsAdded] = React.useState(true);
-  const [rating, setRating] = React.useState(null);
+  const [buttonText, setButtonText] = React.useState('В корзину');
+  const [isAddedToCart, setIsAddedToCart] = React.useState(false);
+  const navigate = useNavigate();
 
   React.useEffect(() => {
     fetchOneProduct(id).then((data) => setProduct(data));
@@ -20,9 +21,14 @@ const ProductProperty = ({ data }) => {
     append(productId)
       .then((data) => {
         basket.product = data.product;
-        setIsAdded(false);
+        setIsAddedToCart(true);
+        setButtonText('В корзине');
       })
       .catch((error) => alert(error.response.data.message));
+  };
+
+  const goToCart = () => {
+    navigate('/basket');
   };
 
   if (!product) {
@@ -49,16 +55,18 @@ const ProductProperty = ({ data }) => {
             <img src={process.env.REACT_APP_IMG_URL + product.image} alt="wine" />
           </div>
         </div>
-        {isAdded ? (
-          <button
-            onClick={() => clickToCart(product.id)}
-            type="button"
-            className="productproperty__button">
-            В корзину
-          </button>
-        ) : (
-          <button className="productproperty-button__add">В корзине</button>
-        )}
+        <button
+          onClick={() => {
+            if (isAddedToCart) {
+              goToCart();
+            } else {
+              clickToCart(product.id);
+            }
+          }}
+          type="button"
+          className="productproperty__button">
+          {buttonText}
+        </button>
       </div>
     </div>
   );

@@ -5,6 +5,17 @@
         margin-top: 50px;
     }
 
+    &__text {
+        color: #050505;
+        font-size: 25px;
+        font-weight: 500;
+    }
+
+    &__telephone {
+        font-size: 25px;
+            color: #FF0000;
+            font-weight: 700;
+    }
     &__top {
         display: flex;
         

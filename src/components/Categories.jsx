@@ -31,7 +31,7 @@ const Categories = observer(() => {
   return (
     <div className="categories">
       <div className="categories__title" onClick={() => setPopupCategory(!popupCategory)}>
-        Цвет:
+        Категория:
       </div>
       {popupCategory && (
         <div className="categories__popup">

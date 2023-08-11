@@ -18,7 +18,7 @@ function Footer() {
               Русское<span>Вино</span>
             </div>
             <div className="footer__square">
-              <div className="footer__number">+18</div>
+              <div className="footer__number">18+</div>
             </div>
           </div>
           <div className="footer__center">
