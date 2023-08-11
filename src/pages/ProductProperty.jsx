@@ -1,5 +1,6 @@
 import React from 'react';
 import { fetchOneProduct } from '../http/productApi';
+import { fetchBasket } from '../http/basketApi';
 import { useNavigate, useParams } from 'react-router-dom';
 import { append } from '../http/basketApi';
 import { AppContext } from '../components/AppContext';
@@ -15,6 +16,7 @@ const ProductProperty = () => {
 
   React.useEffect(() => {
     fetchOneProduct(id).then((data) => setProduct(data));
+    fetchBasket().then((data) => (basket.products = data.products));
   }, [id]);
 
   const clickToCart = (productId) => {
