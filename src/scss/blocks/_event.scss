@@ -39,8 +39,7 @@
                     font-size: 18px;
                 }
                 @media (max-width: 450px) {
-                    font-size: 18px;
-                    color:rgb(5, 5, 5);
+                    display: none;
                 }
             }
         &-image {

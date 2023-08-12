@@ -33,6 +33,14 @@ const ProductList = observer(() => {
     setFilteredProducts(filteredProducts);
   };
 
+  const handleClickEnter = (event) => {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+    }
+  };
+
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
   React.useEffect(() => {
     setAllProducts(product.products);
   }, [product.products]);
@@ -72,6 +80,7 @@ const ProductList = observer(() => {
             type="text"
             value={searchQuery}
             onChange={handleSearchInputChange}
+            onKeyDown={isMobile ? handleClickEnter : null}
             placeholder="Поиск..."
           />
         </form>

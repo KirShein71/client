@@ -9,7 +9,7 @@ function Home() {
   const [isMobile, setIsMobile] = React.useState(false);
 
   const handleResize = () => {
-    setIsMobile(window.innerWidth <= 767);
+    setIsMobile(window.innerWidth <= 200);
   };
 
   React.useEffect(() => {
