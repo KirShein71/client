@@ -6,6 +6,9 @@
     &__content {
         display: flex;
         margin-bottom: 50px;
+        @media (max-width: 480px) {
+            display: contents;
+        }
         
     }
 
@@ -15,6 +18,9 @@
         @media (max-width: 575px) {
             width: 200px;
             height: 330px;
+        }
+        @media (max-width: 480px) {
+            display: none;
         }
         
         img {
@@ -38,6 +44,9 @@
         @media (max-width: 575px) {
             width: 250px;
             margin-left: 15px;
+        }
+        @media (max-height: 480px) {
+            width: 330px;
         }
     }
 

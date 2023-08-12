@@ -16,6 +16,28 @@
             display: none;
         }
     }
+
+    &__button {
+        display: none;
+        @media (max-width: 480px) {
+            display: block;
+            width: 260px;
+            height: 60px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #9A1523;
+            border-color: #8a2b2b;
+            background: white;
+            border-radius: 5px;
+            margin: 0 auto;
+            text-transform: uppercase;
+            color: rgb(5, 5, 5);
+            font-size: 20px;
+            font-weight: 700;
+        }
+    }
 }
 
 
@@ -64,6 +86,7 @@
         grid-row-gap: 0px;
    
 }
+
 
 @media screen and (max-width: 1366px) {
     .promo {
@@ -162,7 +185,7 @@
         margin-bottom: 5px;
     }
     .brand ul li {
-        font-size: 19px;
+        font-size: 18px;
         margin-right: 30px;
     }
 }

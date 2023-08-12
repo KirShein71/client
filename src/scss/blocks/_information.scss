@@ -1,8 +1,11 @@
 .information {
     padding-top: 50px;
-    padding: 50px;
+    padding-top: 50px;
     background-color: rgb(5, 5, 5);
-    
+    @media (max-width: 480px) {
+        background-color: #ffffff;
+        padding-top: 15px;
+    }
     
     &__content {
         display: flex;
@@ -27,6 +30,9 @@
             @media (max-width: 575px) {
                 font-size: 16px;
             }
+            @media (max-width: 480px) {
+                display: none;
+            }
         }
         &__bottom {
             margin-top: 80px;
@@ -41,8 +47,9 @@
             color: #ffffff;
             padding: 10px 0 5px 0;
             @media (max-width: 450px) {
-                font-size: 18px;
+                font-size: 20px;
                 padding-left: 15px;
+                color:rgb(5, 5, 5);
             }
         }
         &__address {
@@ -50,8 +57,9 @@
             font-weight: 700;
             color: #FF0000;
             @media (max-width: 450px) {
-                font-size: 15px;
+                font-size: 18px;
                 padding-left: 17px;
+                color: rgb(5, 5, 5);
             }
         }
         &__telephone {
@@ -59,7 +67,8 @@
             color: #FF0000;
             font-weight: 700;
             @media (max-width: 450px) {
-               padding-left: 17px;
+               padding-left: 18px;
+               color: rgb(5, 5, 5);
             }
         }
         &__telegramm {
@@ -68,6 +77,8 @@
             font-weight: 700;
             @media (max-width: 450px) {
                 padding-left: 17px;
+                color: rgb(5, 5, 5);
+
             }
         }
         .ymaps-2-1-79-inner-panes {
@@ -89,7 +100,9 @@
     }
 
     &-social {
-       
+        @media (max-width: 480px) {
+            display: none;
+        }
         &__title {
             font-size: 25px;
             font-weight: 700;
@@ -163,12 +176,19 @@
         font-weight: 700;
         padding-left: 10px;
         color: #FF0000;
+        @media (max-width: 480px) {
+            color: rgb(5, 5, 5);
+        }
     }
 
     .cooperation__responsible {
         font-size: 18px;
         font-weight: 700;
         color: #ffffff;
+        @media (max-width: 480px) {
+            color: rgb(5, 5, 5);
+            padding-left: 18px;
+        }
     }
     .cooperation__telepfone, .cooperation__telegram  {
         display: flex;

@@ -123,9 +123,7 @@
         height: 460px;
         padding: 30px;
      
-        &:hover {
-            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-        }
+        
 
         &__img {
             width: 180px;
@@ -158,9 +156,7 @@
         width: 465px;
         height: 510px;
         padding: 30px;
-        &:hover {
-            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-        }
+        
 
         &__img {
             width: 350px;
@@ -252,15 +248,19 @@
 @media screen and (max-width: 480px) {
    .promocard {
     width: 200px;
-    
+    &__img {
+        width: 150px;
+        height: 190px;
+}
    
    &__title {
-    font-size: 14px;
+    font-size: 15px;
     padding-top: 5px;
    }
    &__price {
     font-size: 16px;
     padding-top: 7px;
+    text-align: left;
    }
 }
 }

@@ -74,6 +74,9 @@ const Promo = observer(() => {
           </Link>
         </div>
         <div className="promo-content">{productFetching ? <Loading /> : <PromoList />}</div>
+        <Link to="/catalog">
+          <button className="promo__button">Все вина</button>
+        </Link>
       </div>
     </div>
   );
