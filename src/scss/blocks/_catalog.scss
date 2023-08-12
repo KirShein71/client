@@ -1,5 +1,8 @@
 .catalog {
     margin-top: 50px;
+    @media (max-width: 480px) {
+        margin-top: 15px;
+    }
     &__content {
         display: flex;
         margin-top: 50px;
@@ -9,12 +12,19 @@
         color: #050505;
         font-size: 25px;
         font-weight: 500;
+        @media (max-width: 480px) {
+            width: 335px;
+            font-size: 18px;
+        }
     }
 
     &__telephone {
         font-size: 25px;
             color: #FF0000;
             font-weight: 700;
+            @media (max-width: 480px) {
+                font-size: 18px;
+            }
     }
     &__top {
         display: flex;

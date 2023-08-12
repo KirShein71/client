@@ -264,3 +264,22 @@
    }
 }
 }
+
+@media screen and (max-width: 450px) {
+    .promocard {
+     width: 180px;
+     &__img {
+         width: 150px;
+         height: 190px;
+         img {
+            height: 80%;
+         }
+ }
+    
+    &__title {
+    
+     width: 150px;
+    }
+    
+ }
+ }
