@@ -4,13 +4,14 @@
     padding-bottom: 75px;
     background-color: rgb(5, 5, 5);
     @media (max-width: 767px) {
-        margin-top: 15px;
+        padding-top: 15px;
     }
     @media (max-width: 575px) {
-        margin-top: 15px;
+        padding-top: 15px;
     }
     @media (max-width: 480px) {
-        margin-top: 5px;
+        background-color: #ffffff;
+        padding-top: 5px;
     }
     &__content {
         display: flex;
@@ -36,6 +37,10 @@
                 @media (max-width: 768px) {
                     font-size: 18px;
                 }
+                @media (max-width: 450px) {
+                    font-size: 18px;
+                    color:rgb(5, 5, 5);
+                }
             }
         &-image {
             margin-top: 25px;
@@ -48,6 +53,11 @@
                 @media (max-width: 575px) {
                     width: 60%;
                     margin-left: 60px;
+                }
+                @media (max-width: 450px) {
+                    width: 95%;
+                    margin-left: 5px;
+                   
                 }
             }
         }

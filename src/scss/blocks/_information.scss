@@ -78,10 +78,13 @@
                 width: 330px;
                 height: 260px;
             }
-            @media (max-width: 450px) {
-                width: 400px;
-                height: 240px;
-            }
+            
+        }
+    }
+
+    &-contact__map {
+        @media (max-width: 480px) {
+            display: none;
         }
     }
 

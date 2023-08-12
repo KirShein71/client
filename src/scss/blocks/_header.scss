@@ -6,6 +6,10 @@
     @media (max-width: 575px) {
         min-height: 100px;
     }
+
+    @media (max-width: 450px) {
+        background-color: #ffffff;
+    }
    
 
     &__sidebar {
@@ -25,6 +29,9 @@
         @media (max-width: 1200px) {
             justify-content: space-around;
         }
+        @media (max-width: 450px) {
+            margin-top: 10px;
+        }
         
     }
     &__title {
@@ -34,6 +41,11 @@
         cursor: pointer;
         @media (max-width: 575px) {
             font-size: 27px;
+            
+        }
+        @media (max-width: 450px) {
+            color:rgb(5, 5, 5);
+            padding-left: 10px;
             
         }
         
@@ -54,6 +66,9 @@
         @media (max-width: 575px) {
             font-size: 14px;
         }
+        @media (max-width: 450px) {
+            display: none;
+       }
     }
     
 
@@ -71,6 +86,9 @@
         @media (max-width: 575px) {
             font-size: 16px;
         }
+        @media (max-width: 450px) {
+            display: none;
+       }
     }
     
 
@@ -87,18 +105,25 @@
         @media (max-width: 575px) {
             font-size: 18px;
         }
-        
+        @media (max-width: 450px) {
+            color:rgb(5, 5, 5);
+        }
         &:hover {
             color: rgb(233, 28, 28);
         }
         
     }
 
-    // &__line {
-    //     margin-top: 15px;
-    //     border-bottom: solid 5px #ffffff;
+    &__line {
+        display: none; 
+        @media (max-width: 450px) {
+            display: block;
+            margin-top: 15px;
+            border-bottom: solid 5px #a09898;
+        }
+        
        
-    // }
+    }
 
 
 }
