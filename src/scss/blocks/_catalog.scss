@@ -12,6 +12,16 @@
         color: #050505;
         font-size: 25px;
         font-weight: 500;
+        @media (max-width: 1024px) {
+            width: 900px;
+        }
+        @media (max-width: 767px) {
+            width: 730px;
+        }
+        @media (max-width: 575px) {
+            width: 465px;
+            font-size: 20px;
+        }
         @media (max-width: 480px) {
             width: 335px;
             font-size: 18px;

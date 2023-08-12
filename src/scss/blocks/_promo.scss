@@ -4,6 +4,9 @@
     &-category {
         display: flex;
         justify-content: space-between;
+        @media (max-width: 1200px) {
+            justify-content: space-around;
+        }
     }
         
        

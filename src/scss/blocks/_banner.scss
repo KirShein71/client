@@ -99,83 +99,21 @@
     }
 }
 
-@media screen and (max-width: 1366px) {
-    
-    .button__prev {
-        left: 25px;
-    }
-    .button__next {
-     
-      right: 25px;
-     
+
+
+  @media screen and (max-width: 1200px) {
+    .slider {
+        height: 230px;
+        width: 80%;
     }
   }
 
   @media screen and (max-width: 1200px) {
     .slider {
-        height: 230px;
-        width: 94%;
+     
+        width: 95%;
     }
-    .button__prev {
-        top: 10%;
-    }
-    .button__next {
-      top: 10%;
-    }
-   
   }
   
-//   @media screen and (max-width: 1200px) {
-//     .slider {
-//       height: 230px;
-//     }
-    
-//     .button__prev {
-//         top: 5%;
-//         left: 22px;
-//         font-size: 15px;
-//       width: 35px;
-//       height: 35px;
-//     }
-    
-//     .button__next {
-//       top: 5%;
-//       font-size: 15px;
-//       width: 35px;
-//       height: 35px;
-//       right: 22px;
-    
-//     }
-//   }
-  
-//   @media screen and (max-width: 1024px) {
-//     .slider {
-//       height: 220px;
-//     }
-    
-//     .button__prev,
-//     .button__next {
-//       top: 4%;
-//       font-size: 14px;
-//       width: 32px;
-//       height: 32px;
-//       right: 18px;
-//       left: auto;
-//     }
-//   }
-  
-//   @media screen and (max-width: 991px) {
-//     .slider {
-//       height: 180px;
-//     }
-    
-//     .button__prev,
-//     .button__next {
-//       top: 3%;
-//       font-size: 13px;
-//       width: 28px;
-//       height: 28px;
-//       right: 15px;
-//       left: auto;
-//     }
+
   

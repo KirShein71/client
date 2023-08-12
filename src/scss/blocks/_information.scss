@@ -25,7 +25,7 @@
             text-transform: uppercase;
             color: #ffffff;
             @media (max-width: 768px) {
-                font-size: 20px;
+                font-size: 18px;
             }
             @media (max-width: 575px) {
                 font-size: 16px;
@@ -55,7 +55,7 @@
         &__address {
             font-size: 17px;
             font-weight: 700;
-            color: #FF0000;
+            color: #Ffffff;
             @media (max-width: 450px) {
                 font-size: 18px;
                 padding-left: 17px;
@@ -74,13 +74,16 @@
             font-weight: 700;
             @media (max-width: 450px) {
                padding-left: 18px;
-               padding-top: 18px;
+               padding-top: 13px;
             }
         }
         &__telegramm {
             
             font-size: 18px;
             font-weight: 700;
+            @media (max-width: 575px) {
+                font-size: 13px
+            }
             @media (max-width: 450px) {
                 padding-left: 17px;
                 
@@ -116,7 +119,7 @@
             text-transform: uppercase;
             color: #ffffff;
             @media (max-width: 768px) {
-                font-size: 20px;
+                font-size: 18px;
                 padding-top: 0;
             }
             @media (max-width: 575px) {
@@ -168,6 +171,9 @@
             width: 300px;
             height: 2px;
             background-color: #ffffff;
+            @media (max-width: 767px) {
+                width: 200px;
+            }
             @media (max-width: 575px) {
                 width: 198px;
             }
@@ -181,7 +187,10 @@
         font-size: 18px;
         font-weight: 700;
         padding-left: 10px;
-        color: #FF0000;
+        color: #FFffff;
+        @media (max-width: 575px) {
+            font-size: 13px;
+        }
         @media (max-width: 480px) {
             color: rgb(5, 5, 5);
             font-size: 16px;
@@ -202,6 +211,12 @@
     }
 
     .information-contact__cooperation-phone {
+        font-size: 18px;
+        font-weight: 700;
+        @media (max-width: 575px) {
+            font-size: 13px;
+            
+        }
         @media (max-width: 450px) {
             font-size: 18px;
             padding-left: 18px;

@@ -18,6 +18,9 @@
         display: flex;
         margin-bottom: 45px;
         justify-content: space-between;
+        @media (max-width: 1200px) {
+            justify-content: space-around;
+        }
         @media (max-width: 767px) {
             display: contents;
         }
@@ -50,8 +53,14 @@
                 display: block;
                 width: 95%;
                 border-radius: 10px;
+                @media (max-width: 1200px) {
+                    width: 400px;
+                }
+                @media (max-width: 767px) {
+                    width: 88%;
+                }
                 @media (max-width: 575px) {
-                    width: 60%;
+                    width: 80%;
                     margin-left: 60px;
                 }
                 @media (max-width: 450px) {
@@ -76,10 +85,22 @@
             grid-template-columns: repeat(2, 1fr);
             grid-template-rows: repeat(2, 1fr);
             grid-row-gap:10px;
+            @media (max-width: 1200px) {
+                margin-left: 0;
+            }
             @media(max-width: 991px) {
                 grid-row-gap:7px;
             }
             @media(max-width: 991px) {
+                grid-template-columns: repeat(1, 1fr);
+                grid-template-rows: repeat(4, 1fr);
+            }
+            @media (max-width: 767px) {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(2, 1fr);
+                margin-left: 25px;
+            }
+            @media(max-width: 575px) {
                 grid-template-columns: repeat(1, 1fr);
                 grid-template-rows: repeat(4, 1fr);
             }
@@ -109,12 +130,16 @@
             margin-right: 5px;
             cursor: pointer; 
             border-radius: 10px;
+            @media (max-width: 1024px) {
+                width: 240px;
+            }
             @media (max-width: 991px) {
-                height: 230px;
+                height: 305px;
+                width: 325px;
             }
             @media (max-width: 768px) {
-                width: 200px;
-                height: 150px;
+                width: 355px;
+                height: 290px;
             }
             @media (max-width: 480px) {
                 width: 300px;
@@ -128,6 +153,12 @@
                 top: -14%;
                 left: 15%;
                 text-transform: uppercase;
+                @media (max-width: 1200px) {
+                    left: 4%;
+                }
+                @media (max-width: 1024px) {
+                    font-size: 22px;
+                }
                 @media (max-width: 991px) {
                     font-size: 22px;
                 }
