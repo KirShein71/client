@@ -14,9 +14,11 @@ function Footer() {
       <div className="container">
         <div className="footer__content">
           <div className="footer__right">
-            <div className="footer__title">
-              Русское<span>Вино</span>
-            </div>
+            <Link to="/">
+              <div className="footer__title">
+                Русское<span>Вино</span>
+              </div>
+            </Link>
             <div className="footer__square">
               <div className="footer__number">18+</div>
             </div>

@@ -114,8 +114,7 @@
     &__admin {
         img {
             @media (max-width: 991px) {
-                width: 10px;
-                height: 10px;
+                display: none;
             }
         }
     }
