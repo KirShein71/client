@@ -5,6 +5,7 @@
     
     &__content {
         display: flex;
+        justify-content: space-between;
         margin-bottom: 50px;
         @media (max-width: 480px) {
             display: contents;
@@ -15,6 +16,7 @@
     &__image {
         width: 350px;
         height: 400px;
+       
         @media (max-width: 575px) {
             width: 200px;
             height: 330px;
@@ -24,7 +26,7 @@
         }
         
         img {
-            width: initial;
+            
             height: 100%;
             @media (max-width: 767px) {
                 height: 85%;
@@ -40,20 +42,6 @@
     &__information {
         margin-top: 15px;
         margin-left: 50px;
-        width: 900px;
-        @media (max-width: 767px) {
-            width: 600px;
-        }
-        @media (max-width: 575px) {
-            width: 300px;
-        }
-        @media (max-width: 575px) {
-            width: 250px;
-            margin-left: 15px;
-        }
-        @media (max-height: 480px) {
-            width: 390px;
-        }
     }
 
     &__title {
