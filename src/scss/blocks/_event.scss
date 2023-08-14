@@ -109,6 +109,9 @@
                 grid-template-columns: repeat(1, 1fr);
                 grid-template-rows: repeat(4, 1fr);
             }
+            @media (max-width: 450px) {
+                margin-left: 5px;
+            }
             
         }
 
@@ -130,7 +133,6 @@
                 @media (max-width: 480px) {
                     color:#ffffff;
                     font-size: 20px;
-                    top: -35px;
                 }
         }
         &__card {
@@ -184,6 +186,8 @@
                 }
                 @media (max-width: 480px) {
                     color:#ffffff;
+                    font-size: 20px;
+                    top: -35px;
                 }
             }
 
