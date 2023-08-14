@@ -2,9 +2,8 @@
     padding-top: 50px;
     padding-top: 50px;
     background-color: rgb(5, 5, 5);
-    @media (max-width: 480px) {
-        background-color: #ffffff;
-        padding-top: 15px;
+    @media (max-width: 575px) {
+        display: none;
     }
     
     &__content {
@@ -114,7 +113,6 @@
         &__title {
             font-size: 25px;
             font-weight: 700;
-            padding-top: 25px;
             text-transform: uppercase;
             color: #ffffff;
             @media (max-width: 768px) {
@@ -136,7 +134,8 @@
         &__telegramm, &__vk {
             display: flex;
             img {
-                width: 25%;
+                width: 15%;
+                filter: brightness(100%);
                 @media (max-width: 768px) {
                     width: 18%;
                 }

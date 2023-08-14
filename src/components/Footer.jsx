@@ -1,14 +1,31 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 function Footer() {
   const isAuth = false;
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const handleClickScroll = () => {
     const element = document.getElementById('event');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  const handleClickEvent = () => {
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        handleClickScroll();
+      }, 100);
+    } else {
+      setTimeout(() => {
+        handleClickScroll();
+      }, 100);
+    }
+  };
+
   return (
     <div className="footer">
       <div className="container">
@@ -27,7 +44,7 @@ function Footer() {
             <Link to="/catalog">
               <div className="footer__items">Вино</div>
             </Link>
-            <div onClick={handleClickScroll} className="footer__items">
+            <div onClick={handleClickEvent} className="footer__items">
               Мепрориятия
             </div>
             <Link to="/basket">

@@ -41,7 +41,7 @@ function Information() {
             </div>
           </div>
           <div className="information-social">
-            <div className="information-social__title">Мы в социальных сетях</div>
+            <div className="information-social__title">Читайте нас в социальных сетях</div>
             <div className="information-social__content">
               <div className="information-social__telegramm">
                 <img src="./img/telegramm.png" alt="telegramm" />

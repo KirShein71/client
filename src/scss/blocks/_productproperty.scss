@@ -93,7 +93,7 @@
 
     
 
-    &__button {
+    button {
         display: block;
         margin: 0 auto;
         width: 170px;
@@ -106,21 +106,12 @@
         font-weight: 600;
         text-align: center;
         cursor: pointer;
+
+        &.added {
+            background-color: green;
+          }
     }
 
-    &-button__add {
-        display: block;
-        margin: 0 auto;
-        width: 170px;
-        height: 30px;
-        border-radius: 5px;
-        background-color: green;
-        border: none;
-        color: #ffff;
-        font-size: 16px;
-        font-weight: 600;
-        text-align: center;
-        cursor: pointer;
-    }
+  
 }
 

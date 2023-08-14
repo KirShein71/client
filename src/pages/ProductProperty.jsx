@@ -66,7 +66,7 @@ const ProductProperty = () => {
             }
           }}
           type="button"
-          className="productproperty__button">
+          className={isAddedToCart ? 'added' : ''}>
           {buttonText}
         </button>
       </div>

@@ -120,7 +120,7 @@ const Checkout = () => {
             isInvalid={valid.phone === false}
             placeholder="Введите номер телефона..."
             minlength="10"
-            maxlength="12"
+            maxlength="11"
             className="checkout__input"
           />
           {basket.products.map((obj) => (
