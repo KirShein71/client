@@ -19,7 +19,7 @@ function Event() {
         <div className="event__content">
           <EventToday />
           <div className="event-all">
-            <h2 className="event-all__title">Проведем для вас частное меоприятие</h2>
+            <h2 className="event-all__title">Проведем для вас частное мероприятие</h2>
             <div className="event-all__content">
               {events.map((event, index) => (
                 <React.Fragment key={index}>
