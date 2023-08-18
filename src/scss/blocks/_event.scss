@@ -294,6 +294,9 @@
 	@media (max-width: 600px) {
 		width: 360px;
 	}
+    @media (max-width: 450px) {
+        max-height: 70vh;
+    }
 }
 
 .modal-container-header {
