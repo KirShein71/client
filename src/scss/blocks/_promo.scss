@@ -1,94 +1,59 @@
 .promo {
     margin-top: 100px;
     margin-bottom: 100px;
-    &-category {
-        display: flex;
-        justify-content: space-between;
-        @media (max-width: 1200px) {
-            justify-content: space-around;
-        }
-    }
-        
-       
-
-    &__link {
-        font-size: 23px;
-        font-weight: 600;
-        color: #999;
-        @media (max-width: 450px) {
-            display: none;
-        }
-    }
-
-    &__button {
-        display: none;
-        @media (max-width: 480px) {
-            display: block;
-            width: 260px;
-            height: 60px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 2px solid #9A1523;
-            border-color: #8a2b2b;
-            background: white;
-            border-radius: 5px;
-            margin: 0 auto;
-            text-transform: uppercase;
-            color: rgb(5, 5, 5);
-            font-size: 20px;
-            font-weight: 700;
-        }
-    }
-}
-
-
-
-.brand {
-   
-    ul {
-        display: flex;
-        
-        li{
-            font-size: 23px;
-            font-weight: 700;
-            margin-right: 40px;
-            font-weight: bold;
-            list-style: none;
-            cursor: pointer;
-            transition: background-color 0.1s ease-in-out;
-            padding: 3px;
-          
-            &:hover {
-                background-color: darken(#f00d0d, 2%);
-                border-radius: 5px;
-                color: #ffff;
-                
-            }
-          
-            &:active {
-                background-color: darken(#f9f9f9, 5%);
-                border: 5xp;
-            }
-          
-            &.active {
-                
-                color: red;
-                 }
-            }
-     }
-}
-
-.promolist {
-   
+    &__content {
+        padding-top: 25px;
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: 1fr;
-        grid-column-gap: 15px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 2fr;
+        grid-column-gap: 0px;
         grid-row-gap: 0px;
-   
+        @media (max-width: 1024px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media (max-width: 575px) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+        img {
+            width: 420px;
+            @media (max-width: 1200px) {
+                width: 370px;
+            }
+            @media (max-width: 1024px) {
+                width: 450px;
+            }
+            @media (max-width: 767px) {
+                width: 360px;
+            }
+            @media (max-width: 575px) {
+                width: 500px;
+            }
+            @media (max-width: 480px) {
+                width: 400px;
+            }
+        }
+    }
+    &__title {
+        font-size: 33px;
+        font-weight: 600;
+        color: rgb(7, 7, 7);
+        @media (max-width: 767px) {
+            font-size: 27px;
+        }
+        @media (max-width: 767px) {
+            font-size: 22px;
+        }
+        @media (max-width: 480px) {
+            font-size: 17px;
+        }
+    }
 }
+
+
+
+
+
+
 
 
 @media screen and (max-width: 1366px) {
@@ -96,10 +61,7 @@
         margin-top: 80px;
         margin-bottom: 80px;
     }
-    .brand ul li {
-        font-size: 23px;
-        margin-right: 20px;
-    }
+    
     
     
 }
@@ -109,16 +71,7 @@
         margin-top: 80px;
         margin-bottom: 80px;
     }
-    .brand ul li {
-        font-size: 20px;
-        margin-right: 20px;
-    }
-    .promo__link {
-        font-size: 20px;
-    }
-    .promolist {
-        grid-template-columns: repeat(3, 1fr);
-    }
+    
 }
 
 @media screen and (max-width: 1024px) {
@@ -126,13 +79,7 @@
         margin-top: 80px;
         margin-bottom: 80px;
     }
-    .brand ul li {
-        font-size: 20px;
-        margin-right: 20px;
-    }
-    .promolist {
-        grid-template-columns: repeat(3, 1fr);
-    }
+    
 }
 
 @media screen and (max-width: 991px) {
@@ -140,16 +87,7 @@
         margin-top: 60px;
         margin-bottom: 60px;
     }
-    .brand ul li {
-        font-size: 18px;
-        margin-right: 15px;
-    }
-    .promo__link {
-        font-size: 18px;
-    }
-    .promolist {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    
 
 }
 
@@ -158,10 +96,7 @@
         margin-top: 60px;
         margin-bottom: 20px;
     }
-    .brand ul li {
-        font-size: 18px;
-        margin-right: 15px;
-    }
+    
    
 }
 
@@ -170,16 +105,7 @@
         margin-top: 40px;
         margin-bottom: 40px;
     }
-    .brand ul li {
-        font-size: 16px;
-        margin-right: 10px;
-    }
-    .promo__link {
-        font-size: 16px;
-    }
-    .promolist {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    
 }
 
 @media screen and (max-width: 480px) {
@@ -187,8 +113,5 @@
         margin-top: 5px;
         margin-bottom: 30px;
     }
-    .brand ul li {
-        font-size: 20px;
-        margin-right: 15px;
-    }
+    
 }

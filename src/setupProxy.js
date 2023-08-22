@@ -4,7 +4,7 @@ module.exports = function (app) {
   app.use(
     '/api',
     createProxyMiddleware({
-      target: 'https://app.ruswine-spb.ru',
+      target: 'https://app.ruswine-spb.ru/',
       changeOrigin: true,
     }),
   );
