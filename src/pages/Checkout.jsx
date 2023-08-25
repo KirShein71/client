@@ -14,7 +14,7 @@ const isValid = (input) => {
       pattern = /^[-а-я]{1,}$/i;
       return pattern.test(input.value.trim());
     case 'phone':
-      pattern = /[0-9]{1}[0-9]{3}[0-9]{3}[0-9]{4}$/i;
+      pattern = /^[8]{1}[0-9]{3}[0-9]{3}[0-9]{4}$/i;
       return pattern.test(input.value.trim());
     default:
       return false;
@@ -28,6 +28,7 @@ const Checkout = () => {
   const [value, setValue] = React.useState({ name: '', phone: '' });
   const [valid, setValid] = React.useState({ name: null, phone: null });
   const form = React.useRef();
+  const [clicked, setClicked] = React.useState(false);
 
   React.useEffect(() => {
     // если корзина пуста, здесь делать нечего
@@ -63,7 +64,9 @@ const Checkout = () => {
     setValue({ ...value, [event.target.name]: event.target.value });
     setValid({ ...valid, [event.target.name]: isValid(event.target) });
   };
-
+  const handleInputClick = () => {
+    setClicked(true);
+  };
   const handleSubmit = (event) => {
     event.preventDefault();
     setValue({
@@ -75,6 +78,7 @@ const Checkout = () => {
       name: isValid(event.target.name),
       phone: isValid(event.target.phone),
     });
+
     if (valid.name && valid.phone) {
       // форма заполнена правильно, можно отправлять данные
       const body = { ...value };
@@ -82,17 +86,27 @@ const Checkout = () => {
       create(body).then((data) => {
         setOrder(data);
         basket.products = [];
+
+        // Проверка формы перед отправкой на почту
+        if (isValidForm()) {
+          emailjs
+            .sendForm('service_xaroayf', 'template_bjbchs7', form.current, '0URx16u5H2eJHAzaX')
+            .then(
+              (result) => {
+                console.log(result.text);
+              },
+              (error) => {
+                console.log(error.text);
+              },
+            );
+        }
       });
     }
-    console.log(isValid);
-    emailjs.sendForm('service_xaroayf', 'template_bjbchs7', form.current, '0URx16u5H2eJHAzaX').then(
-      (result) => {
-        console.log(result.text);
-      },
-      (error) => {
-        console.log(error.text);
-      },
-    );
+  };
+
+  const isValidForm = () => {
+    // Проверка всех полей формы
+    return valid.name && valid.phone;
   };
 
   return (
@@ -114,8 +128,9 @@ const Checkout = () => {
           />
           <input
             name="phone"
-            value={value.phone}
+            value={clicked ? value.phone || '8' : ''}
             onChange={(e) => handleChange(e)}
+            onClick={handleInputClick}
             isValid={valid.phone === true}
             isInvalid={valid.phone === false}
             placeholder="Введите номер телефона..."
