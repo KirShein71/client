@@ -34,7 +34,7 @@ const Header = observer(() => {
         <div className="header__sidebar">
           <Link to="/">
             <h1 className="header__title">
-              Русское<span>Вино</span>
+              <img src="./img/ruswine.png" alt="russian__wine" />
             </h1>
           </Link>
           <div className="header__working">

@@ -46,6 +46,15 @@
             padding-left: 10px;
             
         }
+        img {
+            width: 80%;
+            @media (max-width: 480px) {
+                width: 100%;
+            }
+            @media (max-width: 450px) {
+                width: 60%;
+            }
+        }
         
         
     }

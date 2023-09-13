@@ -117,6 +117,7 @@ const Catalog = observer(() => {
             8-951-682-54-68
           </a>
         </p>
+        <p className="catalog__footnote">* Цены - не публичная оферта</p>
         <div className="catalog__top">
           <div className="catalog__categories">
             {categoriesFetching ? <Loading /> : <Categories />}
@@ -128,6 +129,7 @@ const Catalog = observer(() => {
           </Link>
         </div>
         <div>{productsFetching ? <Loading /> : <ProductList />}</div>
+        <p className="catalog__footnote">* Цены - не публичная оферта</p>
       </div>
     </div>
   );
