@@ -112,12 +112,12 @@ const Catalog = observer(() => {
     <div className="catalog">
       <div className="container">
         <p className="catalog__text">
-          Aктуальный ассортимент всегда можно уточнить по нашему рабочему номеру{' '}
+          Внимание! Цены на сайте не являются публичной офертой. Для уточнения актуальной информации
+          свяжитесь с винотекой по номеру{' '}
           <a className="catalog__telephone" href="tel:+79516825468">
             8-951-682-54-68
           </a>
         </p>
-        <p className="catalog__footnote">* Цены - не публичная оферта</p>
         <div className="catalog__top">
           <div className="catalog__categories">
             {categoriesFetching ? <Loading /> : <Categories />}
@@ -129,7 +129,13 @@ const Catalog = observer(() => {
           </Link>
         </div>
         <div>{productsFetching ? <Loading /> : <ProductList />}</div>
-        <p className="catalog__footnote">* Цены - не публичная оферта</p>
+        <p className="catalog__text">
+          Внимание! Цены на сайте не являются публичной офертой. Для уточнения актуальной информации
+          свяжитесь с винотекой по номеру{' '}
+          <a className="catalog__telephone" href="tel:+79516825468">
+            8-951-682-54-68
+          </a>
+        </p>
       </div>
     </div>
   );
