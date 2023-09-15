@@ -11,13 +11,12 @@ function Home({ onClosedAgePopup }) {
   const [agePopUp, setAgePopUp] = React.useState(false);
 
   React.useEffect(() => {
-    const isPopupOpen = localStorage.getItem('isPopupOpen');
-    setTimeout(() => {
-      if (!isPopupOpen) {
+    if (!sessionStorage.getItem('isPopupOpen')) {
+      setTimeout(() => {
         setAgePopUp(true);
-        localStorage.setItem('isPopupOpen', true);
-      }
-    }, 1000);
+        sessionStorage.setItem('isPopupOpen', true);
+      }, 1000);
+    }
   }, []);
 
   onClosedAgePopup = () => {
