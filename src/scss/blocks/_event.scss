@@ -71,7 +71,9 @@
                     width: 370px;
                     height: 361px;
                     margin-left: 20px;
-                
+                }
+                @media (max-width: 450px) {
+                    margin-left: 15px;
                 }
                
             }
@@ -114,6 +116,9 @@
             }
             @media (max-width: 480px) {
                 margin-left: 20px;
+            }
+            @media (max-width: 450px) {
+                margin-left: 15px;
             }
             
         }
