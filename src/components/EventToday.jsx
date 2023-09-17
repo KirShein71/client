@@ -60,8 +60,20 @@ const EventToday = observer(() => {
                           <a href={eventItem.link} className="event-today__modal-link">
                             {eventItem.link}
                           </a>
-                          <p className="event-today__modal-text">{eventItem.responsible}</p>
                         </p>
+                        <p className="modal__ticket">
+                          WhatsApp:{' '}
+                          <a href={eventItem.whatsapp} className="event-today__modal-link">
+                            {eventItem.whatsapp}
+                          </a>
+                        </p>
+                        <p className="modal__ticket">
+                          Telegram:{' '}
+                          <a href={eventItem.telegram} className="event-today__modal-link">
+                            {eventItem.telegram}
+                          </a>
+                        </p>
+                        <p className="event-today__modal-text">{eventItem.responsible}</p>
                       </section>
                     </article>
                   </div>

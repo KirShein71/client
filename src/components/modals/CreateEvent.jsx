@@ -2,11 +2,22 @@ import React from 'react';
 import { Modal, Button, Form, Row, Col } from 'react-bootstrap';
 import { createEvent } from '../../http/productApi';
 
-const defaultValue = { name: '', place: '', link: '', description: '', date: '', responsible: '' };
+const defaultValue = {
+  name: '',
+  place: '',
+  link: '',
+  description: '',
+  date: '',
+  responsible: '',
+  whatsapp: '',
+  telegram: '',
+};
 const defaultValid = {
   name: null,
   place: null,
   link: null,
+  whatsapp: null,
+  telegram: null,
   description: null,
   date: null,
   responsible: null,
@@ -18,6 +29,8 @@ const isValid = (value) => {
     if (key === 'name') result.name = value.name.trim() !== '';
     if (key === 'place') result.place = value.place.trim() !== '';
     if (key === 'link') result.link = value.link.trim() !== '';
+    if (key === 'whatsapp') result.whatsapp = value.whatsapp.trim() !== '';
+    if (key === 'telegram') result.telegram = value.telegram.trim() !== '';
     if (key === 'description') result.description = value.description.trim() !== '';
     if (key === 'date') result.date = value.date.trim() !== '';
     if (key === 'responsible') result.responsible = value.responsible.trim() !== '';
@@ -61,6 +74,8 @@ const CreateEvent = (props) => {
       correct.name &&
       correct.place &&
       correct.link &&
+      correct.whatsapp &&
+      correct.telegram &&
       correct.description &&
       correct.date &&
       correct.responsible
@@ -69,6 +84,8 @@ const CreateEvent = (props) => {
       data.append('name', value.name.trim());
       data.append('place', value.place.trim());
       data.append('link', value.link.trim());
+      data.append('whatsapp', value.whatsapp.trim());
+      data.append('telegram', value.telegram.trim());
       data.append('description', value.description.trim());
       data.append('date', value.date.trim());
       data.append('responsible', value.responsible.trim());
@@ -135,6 +152,26 @@ const CreateEvent = (props) => {
                 isValid={valid.link === true}
                 isInvalid={valid.link === false}
                 placeholder="Ссылка на оплату..."
+              />
+            </Col>
+            <Col>
+              <Form.Control
+                name="whatsapp"
+                value={value.whatsapp}
+                onChange={(e) => handleInputChange(e)}
+                isValid={valid.whatsapp === true}
+                isInvalid={valid.whatsapp === false}
+                placeholder="WhatsApp..."
+              />
+            </Col>
+            <Col>
+              <Form.Control
+                name="telegram"
+                value={value.telegram}
+                onChange={(e) => handleInputChange(e)}
+                isValid={valid.telegram === true}
+                isInvalid={valid.telegram === false}
+                placeholder="Telegram..."
               />
             </Col>
             <Col>
