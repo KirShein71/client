@@ -8,6 +8,7 @@ const Winery = observer(() => {
   const { product } = React.useContext(AppContext);
   const [popupWinery, setPopupWinery] = React.useState(false);
   const navigate = useNavigate();
+  const wineryRef = React.useRef();
 
   const handleClickWinery = (wineryId) => {
     if (wineryId === product.winery) {
@@ -28,8 +29,22 @@ const Winery = observer(() => {
     setPopupWinery(false);
   };
 
+  React.useEffect(() => {
+    const hadleClickOutside = (e) => {
+      if (wineryRef.current && !wineryRef.current.contains(e.target)) {
+        setPopupWinery(false);
+      }
+    };
+
+    document.body.addEventListener('click', hadleClickOutside);
+
+    return () => {
+      document.body.removeEventListener('click', hadleClickOutside);
+    };
+  });
+
   return (
-    <div className="wineries">
+    <div className="wineries" ref={wineryRef}>
       <div className="wineries__title" onClick={() => setPopupWinery(!popupWinery)}>
         Винодельня:
       </div>

@@ -22,7 +22,6 @@ const EventToday = observer(() => {
 
   return (
     <div className="event__today">
-      <h2 className="event__today-title">Ближайшие мероприятия</h2>
       <div className="event__today-content">
         {event.events.map((eventItem, index) => (
           <React.Fragment key={index}>

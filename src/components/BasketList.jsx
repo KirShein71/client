@@ -14,14 +14,12 @@ const BasketList = () => {
   const navigate = useNavigate();
 
   const handleIncrement = (id) => {
-    setFetching(true);
     increment(id)
       .then((data) => (basket.products = data.products))
       .finally(() => setFetching(false));
   };
 
   const handleDecrement = (id) => {
-    setFetching(true);
     decrement(id)
       .then((data) => (basket.products = data.products))
       .finally(() => setFetching(false));

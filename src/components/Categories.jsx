@@ -6,6 +6,7 @@ import { useNavigate, createSearchParams } from 'react-router-dom';
 const Categories = observer(() => {
   const { product } = React.useContext(AppContext);
   const navigate = useNavigate();
+  const categoryRef = React.useRef();
   const [popupCategory, setPopupCategory] = React.useState(false);
 
   const handleClickCategories = (id) => {
@@ -28,8 +29,22 @@ const Categories = observer(() => {
     setPopupCategory(false);
   };
 
+  React.useEffect(() => {
+    const hadleClickOutside = (e) => {
+      if (categoryRef.current && !categoryRef.current.contains(e.target)) {
+        setPopupCategory(false);
+      }
+    };
+
+    document.body.addEventListener('click', hadleClickOutside);
+
+    return () => {
+      document.body.removeEventListener('click', hadleClickOutside);
+    };
+  });
+
   return (
-    <div className="categories">
+    <div className="categories" ref={categoryRef}>
       <div className="categories__title" onClick={() => setPopupCategory(!popupCategory)}>
         Категория:
       </div>

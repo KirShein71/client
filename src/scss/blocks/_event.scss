@@ -1,5 +1,5 @@
 .event {
-    padding-top: 100px;
+    padding-top: 50px;
     position: relative;
     padding-bottom: 75px;
     background-color: rgb(5, 5, 5);
@@ -13,6 +13,12 @@
         background-color: rgb(5, 5, 5);
         padding-top: 5px;
         padding-bottom: 25px;
+    }
+
+    &__title {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 25px;
     }
     &__content {
         display: flex;
@@ -32,7 +38,6 @@
             
                 font-size: 25px;
                 font-weight: 700;
-                padding-top: 25px;
                 text-transform: uppercase;
                 color: #ffffff;
                 @media (max-width: 1024px) {
@@ -47,15 +52,17 @@
             }
         &-image {
             margin-top: 25px;
-            margin-left: 15px;
             cursor: pointer;
-            @media (max-width: 575px) {
-                margin-left: 0;
-            }
+            display: inline-block; 
+            overflow: hidden;
+          
+            
             img {
                 display: block;
                 width: 95%;
                 border-radius: 10px;
+                transition: 1s;
+            
                 @media (max-width: 1200px) {
                     width: 400px;
                 }
@@ -87,7 +94,7 @@
         
        
         &__content {
-            margin-top: 50px; 
+            margin-top: 55px; 
             margin-left: 35px;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -124,9 +131,8 @@
         }
 
         &__title {
-             font-size: 25px;
+                font-size: 25px;
                 font-weight: 700;
-                padding-top: 25px;
                 text-transform: uppercase;
                 color: #ffffff;
                 @media (max-width: 1024px) {
@@ -160,6 +166,7 @@
             cursor: pointer; 
             border-radius: 13px;
             border: 3px solid #ffffff;
+            
             @media (max-width: 1024px) {
                 width: 240px;
                 height: 234px;
@@ -180,7 +187,12 @@
                 width: 370px;
                 height: 361px;
             }
+           
+           
+
+
             &-title {
+                
                 font-size: 27px;
                 font-weight: 700;
                 color: #ffffff;
@@ -188,6 +200,7 @@
                 top: -14%;
                 left: 15%;
                 text-transform: uppercase;
+                
                 @media (max-width: 1200px) {
                     left: 4%;
                 }
@@ -208,11 +221,14 @@
                 }
             }
 
+            
+
             &-img {
                 img {
                 width: 100%;
                 border-radius: 10px;
                 opacity: 0.8;
+                transition: 1s;
                 
                 }
                 

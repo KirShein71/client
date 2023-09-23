@@ -7,6 +7,7 @@ const Year = observer((value) => {
   const { product } = React.useContext(AppContext);
   const [popupYear, setPopupYear] = React.useState(false);
   const navigate = useNavigate();
+  const yearRef = React.useRef();
 
   const handleClickYear = (id) => {
     if (id === product.year) {
@@ -27,8 +28,22 @@ const Year = observer((value) => {
     setPopupYear(false);
   };
 
+  React.useEffect(() => {
+    const hadleClickOutside = (e) => {
+      if (yearRef.current && !yearRef.current.contains(e.target)) {
+        setPopupYear(false);
+      }
+    };
+
+    document.body.addEventListener('click', hadleClickOutside);
+
+    return () => {
+      document.body.removeEventListener('click', hadleClickOutside);
+    };
+  });
+
   return (
-    <div className="years">
+    <div className="years" ref={yearRef}>
       <div className="years__title" onClick={() => setPopupYear(!popupYear)}>
         Регион:
       </div>

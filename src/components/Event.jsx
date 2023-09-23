@@ -16,10 +16,13 @@ function Event() {
   return (
     <div className="event" id="event">
       <div className="container">
+        <div className="event__title">
+          <h2 className="event__today-title">Ближайшие мероприятия</h2>
+          <h2 className="event-all__title">Проведем для вас частное мероприятие</h2>
+        </div>
         <div className="event__content">
           <EventToday />
           <div className="event-all">
-            <h2 className="event-all__title">Проведем для вас частное мероприятие</h2>
             <div className="event-all__content">
               {events.map((event, index) => (
                 <React.Fragment key={index}>
