@@ -47,7 +47,7 @@
                     font-size: 18px;
                 }
                 @media (max-width: 480px) {
-                    display: none;
+                    font-size: 18px;
                 }
             }
         &-image {
@@ -82,6 +82,11 @@
                 @media (max-width: 450px) {
                     margin-left: 15px;
                 }
+
+                @media (max-width: 410px) {
+                    width: 330px;
+                    height: 300px;
+                }
                
             }
         }
@@ -92,7 +97,33 @@
 
     .event-all {
         
-       
+        &__title-mobile {
+            display: none;
+            @media (max-width: 768px) {
+                display: inline-block;
+                padding-top: 25px;
+                font-size: 18px;
+                font-weight: 700;
+                text-transform: uppercase;
+                color: #ffffff;
+            }
+            @media (max-width: 575px) {
+                font-size: 22px;
+            }
+            @media (max-width: 480px) {
+                color:#ffffff;
+                font-size: 18px;
+            }
+            @media (max-width: 444px) {
+                font-size: 17px;
+            }
+            @media (max-width: 420px) {
+                font-size: 16px;
+            }
+            @media (max-width: 397px) {
+                font-size: 15px;
+            }
+        }
         &__content {
             margin-top: 55px; 
             margin-left: 35px;
@@ -139,24 +170,9 @@
                     font-size: 22px;
                 }
                 @media (max-width: 768px) {
-                    font-size: 18px;
+                    display: none;
                 }
-                @media (max-width: 575px) {
-                    font-size: 22px;
-                }
-                @media (max-width: 480px) {
-                    color:#ffffff;
-                    font-size: 18px;
-                }
-                @media (max-width: 444px) {
-                    font-size: 17px;
-                }
-                @media (max-width: 420px) {
-                    font-size: 16px;
-                }
-                @media (max-width: 397px) {
-                    font-size: 15px;
-                }
+                
         }
         &__card {
             width: 320px;
@@ -186,6 +202,10 @@
             @media (max-width: 480px) {
                 width: 370px;
                 height: 361px;
+            }
+            @media (max-width: 410px) {
+                width: 330px;
+                height: 321px;
             }
            
            
