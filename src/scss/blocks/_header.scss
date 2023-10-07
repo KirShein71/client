@@ -109,6 +109,7 @@
         color: #ffffff;
         cursor: pointer;
         padding-top: 8px;
+        transition: color 0.5s ease;
         @media (max-width: 575px) {
             font-size: 18px;
         }
@@ -116,7 +117,7 @@
             color:#ffffff;
         }
         &:hover {
-            color: rgb(233, 28, 28);
+            color: rgb(228, 19, 19);
         }
         
     }

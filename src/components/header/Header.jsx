@@ -7,6 +7,7 @@ const Header = observer(() => {
   const { basket } = React.useContext(AppContext);
   const navigate = useNavigate();
   const location = useLocation();
+  const [activePage, setActivePage] = React.useState('');
 
   const handleClickScroll = () => {
     const element = document.getElementById('event');
@@ -44,17 +45,25 @@ const Header = observer(() => {
         </div>
         <div className="header__content">
           <Link to="/">
-            <div className="header__item">Главная</div>
+            <div className={activePage === '/' ? 'active' : ''} onClick={() => setActivePage('/')}>
+              Главная
+            </div>
           </Link>
           <Link to="/catalog">
-            <div className="header__item">Каталог</div>
+            <div
+              className={activePage === 'catalog' ? 'active' : ''}
+              onClick={() => setActivePage('catalog')}>
+              Каталог
+            </div>
           </Link>
           <div onClick={handleClickEvent} className="header__item">
             Мероприятия
           </div>
 
           <Link to="/basket">
-            <div className="header__item">
+            <div
+              className={activePage === 'basket' ? 'active' : ''}
+              onClick={() => setActivePage('basket')}>
               Корзина {!!basket.count && <span>({basket.count})</span>}
             </div>
           </Link>
