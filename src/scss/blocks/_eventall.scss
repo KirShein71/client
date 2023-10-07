@@ -105,10 +105,11 @@
             width: 370px;
             height: 361px;
             display: block;
-    margin-left: auto;
-    margin-right: auto;
-        }
-        @media (max-width: 410px) {
+            margin-left: auto;
+            margin-right: auto;
+                }
+        
+        @media (max-width: 430px) {
             width: 330px;
             height: 321px;
         }
