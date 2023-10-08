@@ -50,7 +50,9 @@ function EventAll() {
                         <h2 className="title-modal__eventall">{event.title}</h2>
                         <p>{event.description}</p>
                         <span className="span__event">
-                          Подробная информация по телефонам: +79523813112, +79213119849
+                          Подробная информация по телефонам:{' '}
+                          <a href="tel:+79523813112">+79523813112</a>,{' '}
+                          <a href="tel:+79213119849">+79213119849</a>
                         </span>
                       </div>
                     </div>
