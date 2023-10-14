@@ -7,6 +7,12 @@
         display: flex;
         justify-content: space-between;
         margin-bottom: 50px;
+        @media (max-width: 750px) {
+            margin-bottom: 100px;
+        }
+        @media (max-width: 575px) {
+            margin-bottom: 50px;
+        }
         @media (max-width: 480px) {
             display: contents;
         }
