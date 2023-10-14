@@ -1,7 +1,8 @@
 .footer {
     background-color: rgb(5, 5, 5);
     border-top: 1px solid white;
-    flex: 0 0 auto;   
+    position: absolute;
+    bottom: 0;   
     &__title {
         font-size: 25px;
         font-weight: 700;
