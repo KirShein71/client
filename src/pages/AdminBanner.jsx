@@ -1,87 +1,53 @@
 import React from 'react';
-import { fetchAllBanners, deleteBanner } from '../http/productApi';
+import { fetchAllProjects } from '../http/productApi';
 import { Button, Container, Spinner, Table } from 'react-bootstrap';
 import CreateBanner from '../components/modals/CreateBanner';
 
 // количество товаров на страницу
 
 const AdminBanner = () => {
-  const [banners, setBanners] = React.useState([]); // список загруженных товаров
-  const [fetching, setFetching] = React.useState(true); // загрузка списка товаров с сервера
-  const [createShow, setCreateShow] = React.useState(false); // модальное окно создания товара
-
-  // для обновления списка после добавления, редактирования, удаления — изменяем состояние
+  const [projects, setProjects] = React.useState([]); // список загруженных товаров
+  const [fetching, setFetching] = React.useState(true);
+  const [createShow, setCreateShow] = React.useState(false);
   const [change, setChange] = React.useState(true);
-  // id товара, который будем редактировать — для передачи в <UpdateProduct id={…} />
-  const [setBanner] = React.useState('');
-
-  const handleUpdateClick = (id) => {
-    setBanner(id);
-  };
-
-  const handleDeleteClick = (id) => {
-    deleteBanner(id)
-      .then((data) => {
-        setChange(!change);
-        alert(`Баннер «${data.name}» удален`);
-      })
-      .catch((error) => alert(error.response.data.message));
-  };
 
   React.useEffect(() => {
-    fetchAllBanners()
-      .then((data) => setBanners(data))
+    fetchAllProjects()
+      .then((data) => setProjects(data))
       .finally(() => setFetching(false));
   }, [change]);
 
   if (fetching) {
     return <Spinner animation="border" />;
   }
-
   return (
-    <Container>
-      <h1>Баннер</h1>
-      <Button onClick={() => setCreateShow(true)}>Создать баннер</Button>
+    <div className="projectlist">
+      <button className="projectlist__button">Все проекты</button>
       <CreateBanner show={createShow} setShow={setCreateShow} setChange={setChange} />
-
-      <div>
-        <Table bordered hover size="sm" className="mt-3">
-          <thead>
-            <tr>
-              <th>Фото</th>
-              <th>Редактировать</th>
-              <th>Удалить</th>
-            </tr>
-          </thead>
-          <tbody>
-            {banners.map((item) => (
-              <tr key={item.id}>
-                <td>
-                  {item.image && (
-                    <a
-                      href={process.env.REACT_APP_IMG_URL + item.image}
-                      target="_blank"
-                      rel="noreferrer">
-                      фото
-                    </a>
-                  )}
-                </td>
-                <td>
-                  <Button variant="success" size="sm" onClick={() => handleUpdateClick(item.id)}>
-                    Редактировать
-                  </Button>
-                </td>
-                <td>
-                  <Button variant="danger" size="sm" onClick={() => handleDeleteClick(item.id)}>
-                    Удалить
-                  </Button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </Table>
+      <div className="projectlist__buttons">
+        <button onClick={() => setCreateShow(true)} className="projectlist__button">
+          Добавить проект
+        </button>
+        <button className="projectlist__button">Проектирование</button>
+        <button className="projectlist__button">Закупки</button>
       </div>
-    </Container>
+      <Table bordered hover size="sm" className="mt-3">
+        <thead>
+          <tr>
+            <th>Название</th>
+            <th>Дата договора</th>
+          </tr>
+        </thead>
+        <tbody>
+          {projects.map((item) => (
+            <tr key={item.id}>
+              <td>{item.name}</td>
+              <td>{item.agreement_date}</td>
+            </tr>
+          ))}
+        </tbody>
+      </Table>
+    </div>
   );
 };
 

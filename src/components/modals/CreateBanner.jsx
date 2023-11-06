@@ -1,52 +1,75 @@
 import React from 'react';
 import { Modal, Button, Form, Row, Col } from 'react-bootstrap';
-import { createBanner } from '../../http/productApi';
+import { createProject } from '../../http/productApi';
 
-const defaultValue = { name: '' };
+const defaultValue = {
+  name: '',
+  agreement_date: '',
+  design_period: '',
+  expiration_date: '',
+  installation_period: '',
+  note: '',
+};
 const defaultValid = {
   name: null,
+  agreement_date: null,
+  design_period: null,
+  expiration_date: null,
+  installation_period: null,
+  note: null,
 };
 
 const isValid = (value) => {
   const result = {};
   for (let key in value) {
     if (key === 'name') result.name = value.name.trim() !== '';
+    if (key === 'agreement_date') result.agreement_date = value.agreement_date.trim() !== '';
+    if (key === 'design_period') result.design_period = value.design_period.trim() !== '';
+    if (key === 'expiration_date') result.expiration_date = value.expiration_date.trim() !== '';
+    if (key === 'installation_period')
+      result.installation_period = value.installation_period.trim() !== '';
+    if (key === 'note') result.note = value.note.trim() !== '';
   }
   return result;
 };
 
 const CreateBanner = (props) => {
   const { show, setShow, setChange } = props;
+
   const [value, setValue] = React.useState(defaultValue);
   const [valid, setValid] = React.useState(defaultValid);
 
-  // выбранное для загрузки изображение товара
-  const [image, setImage] = React.useState(null);
-
-  const handleInputChange = (banner) => {
-    const data = { ...value, [banner.target.name]: banner.target.value };
+  const handleInputChange = (event) => {
+    const data = { ...value, [event.target.name]: event.target.value };
     setValue(data);
     setValid(isValid(data));
   };
 
-  const handleImageChange = (banner) => {
-    setImage(banner.target.files[0]);
-  };
+  const handleSubmit = (event) => {
+    event.preventDefault();
 
-  const handleSubmit = (banner) => {
-    banner.preventDefault();
     const correct = isValid(value);
     setValid(correct);
 
-    // все поля формы прошли проверку, можно отправлять данные на сервер
-    if (correct.name) {
+    if (
+      correct.name &&
+      correct.agreement_date &&
+      correct.design_period &&
+      correct.expiration_date &&
+      correct.installation_period &&
+      correct.note
+    ) {
       const data = new FormData();
       data.append('name', value.name.trim());
-      if (image) data.append('image', image, image.name);
-      createBanner(data)
+      data.append('agreement_date', value.agreement_date.trim());
+      data.append('design_period', value.design_period.trim());
+      data.append('expiration_date', value.expiration_date.trim());
+      data.append('installation_period', value.installation_period.trim());
+      data.append('note', value.note.trim());
+
+      createProject(data)
         .then((data) => {
           // приводим форму в изначальное состояние
-          banner.target.image.value = '';
           setValue(defaultValue);
           setValid(defaultValid);
 
@@ -62,7 +85,7 @@ const CreateBanner = (props) => {
   return (
     <Modal show={show} onHide={() => setShow(false)} size="xl">
       <Modal.Header closeButton>
-        <Modal.Title>Новый баннер</Modal.Title>
+        <Modal.Title>Добавить проект</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form noValidate onSubmit={handleSubmit}>
@@ -72,17 +95,62 @@ const CreateBanner = (props) => {
             onChange={(e) => handleInputChange(e)}
             isValid={valid.name === true}
             isInvalid={valid.name === false}
-            placeholder="Название мероприятия..."
+            placeholder="Название проекта"
             className="mb-3"
           />
           <Row className="mb-3">
             <Col>
               <Form.Control
-                name="image"
-                type="file"
-                onChange={(e) => handleImageChange(e)}
-                placeholder="Фото товара..."
+                name="agreement_date"
+                value={value.agreement_date}
+                onChange={(e) => handleInputChange(e)}
+                isValid={valid.agreement_date === true}
+                isInvalid={valid.agreement_date === false}
+                placeholder="Дата договора"
               />
+            </Col>
+            <Col>
+              <Form.Control
+                name="design_period"
+                value={value.design_period}
+                onChange={(e) => handleInputChange(e)}
+                isValid={valid.design_period === true}
+                isInvalid={valid.design_period === false}
+                placeholder="Срок проектирования"
+              />
+            </Col>
+            <Col>
+              <Form.Control
+                name="expiration_date"
+                value={value.expiration_date}
+                onChange={(e) => handleInputChange(e)}
+                isValid={valid.expiration_date === true}
+                isInvalid={valid.expiration_date === false}
+                placeholder="Срок производства"
+              />
+            </Col>
+            <Col>
+              <Form.Control
+                name="installation_period"
+                value={value.installation_period}
+                onChange={(e) => handleInputChange(e)}
+                isValid={valid.installation_period === true}
+                isInvalid={valid.installation_period === false}
+                placeholder="Срок монтажа"
+              />
+            </Col>
+            <Col>
+              <Col>
+                <textarea
+                  name="note"
+                  value={value.note}
+                  onChange={(e) => handleInputChange(e)}
+                  isValid={valid.note === true}
+                  isInvalid={valid.note === false}
+                  placeholder="Примечание"
+                  style={{ height: '200px', width: '100%' }}
+                />
+              </Col>
             </Col>
           </Row>
           <Row>

@@ -13,6 +13,13 @@ const ProductProperty = () => {
   const [buttonText, setButtonText] = React.useState('В корзину');
   const [isAddedToCart, setIsAddedToCart] = React.useState(false);
   const navigate = useNavigate();
+  const cardRef = React.useRef(null);
+
+  React.useEffect(() => {
+    if (cardRef.current) {
+      cardRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, []);
 
   React.useEffect(() => {
     fetchOneProduct(id).then((data) => setProduct(data));
@@ -38,7 +45,7 @@ const ProductProperty = () => {
   }
 
   return (
-    <div className="productproperty">
+    <div className="productproperty" ref={cardRef}>
       <div className="container">
         <div className="productproperty__content">
           <div className="productproperty__information">

@@ -4,7 +4,6 @@ import { createBrand, fetchBrand, updateBrand } from '../../http/productApi';
 
 const Brand = (props) => {
   const { id, show, setShow, setChange } = props;
-
   const [name, setName] = React.useState('');
   const [valid, setValid] = React.useState(null);
 
@@ -18,6 +17,7 @@ const Brand = (props) => {
         .catch((error) => alert(error.response.data.message));
     } else {
       setName('');
+
       setValid(null);
     }
   }, [id]);

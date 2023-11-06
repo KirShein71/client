@@ -146,13 +146,6 @@ const UpdateProduct = (props) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
-    /*
-     * На первый взгляд кажется, что переменная correct не нужна, можно обойтись valid, но это
-     * не так. Нельзя использовать значение valid сразу после изменения этого значения — ф-ция
-     * setValid не изменяет значение состояния мгновенно. Вызов функции лишь означает — React
-     * «принял к сведению» наше сообщение, что состояние нужно изменить.
-     */
     const correct = isValid(value);
     setValid(correct);
 

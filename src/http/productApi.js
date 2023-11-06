@@ -143,7 +143,6 @@ export const fetchAllProducts = async (categoryId = null, wineryId = null, yearI
 
 export const fetchPromoProducts = async (brandId = null) => {
     let url = 'product/getall'
-    // фильтрация товаров по категории и/или бренду
     if (brandId) url = url + '/brandId/' + brandId
     const { data } = await guestInstance.get(
         url,
@@ -240,3 +239,13 @@ export const fetchOneBanner = async (id) => {
     return data
 }
 
+
+export const createProject = async (project) => {
+    const { data } = await authInstance.post('project/create', project)
+    return data
+}
+
+export const fetchAllProjects = async () => {
+    const { data } = await guestInstance.get('project/getall')
+    return data
+}

@@ -66,9 +66,6 @@ function Footer() {
                 <img width={10} height={10} src="./img/admin.png" alt="glass" />
               </div>
             </Link>
-            <Link to="/admin">
-              {isAuth && <button className="footer__button">Админ панель</button>}
-            </Link>
           </div>
         </div>
       </div>

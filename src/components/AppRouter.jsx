@@ -54,6 +54,7 @@ const adminRoutes = [
   { path: '/admin/brand', Component: AdminBrand },
   { path: '/admin/event', Component: AdminEvent },
   { path: '/admin/banner', Component: AdminBanner },
+  { path: '/admin', Component: Admin },
 ];
 
 const AppRouter = observer(() => {
