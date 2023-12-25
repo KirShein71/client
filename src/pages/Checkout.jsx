@@ -11,7 +11,7 @@ const isValid = (input) => {
   let pattern;
   switch (input.name) {
     case 'name':
-      pattern = /^[-а-я]{1,}$/i;
+      pattern = /^[а-яА-Я\s]+$/i;
       return pattern.test(input.value.trim());
     case 'phone':
       pattern = /^[8]{1}[0-9]{3}[0-9]{3}[0-9]{4}$/i;
